@@ -1,0 +1,171 @@
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #c288ff, #3a82ff); /* Matching gradient */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Header Styling */
+h1 {
+    font-size: 24px;
+    color: #ffffff; 
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Flash Messages Styling */
+.flash-messages {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.flash-messages p {
+    background-color: #f44336; 
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.flash-messages .success {
+    background-color: #4CAF50; 
+}
+
+.flash-messages .info {
+    background-color: #21f33d; 
+}
+
+/* Form Styling */
+form {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Input Fields Styling */
+form input[type="password"] {
+    width: 90%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+form input[type="text"],
+input[type="email"] {
+    width: 90%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+form input[type="text"]:focus,
+form input[type="password"]:focus 
+{
+    border: 1px solid #2C3E50; 
+    background-color: #FFFFFF; 
+    color: #2C3E50; 
+}
+
+/* Submit Button Styling */
+.submit-btn input[type="submit"] {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #3b7cff;
+    border: none;
+    color: #ffffff;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn input[type="submit"]:hover {
+    background-color: #0056b3; 
+}
+
+.transparent-input {
+    background-color: transparent;  /* Makes the background transparent */
+    border: 1px solid #ccc;  /* Light border to differentiate the input */
+    padding: 10px;
+    width: 100%;  /* Make the input take up full width */
+    box-sizing: border-box;  /* Ensure padding doesn't affect the width */
+    font-size: 16px;  /* Set a readable font size */
+    color: #333;  /* Dark text for readability */
+    border-radius: 5px;  /* Optional: rounded corners */
+}
+
+.transparent-input:focus {
+    outline: none;  /* Remove the default outline on focus */
+    border-color: #007BFF;  /* Change border color when focused */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);  /* Add a subtle shadow on focus */
+}
+
+/* Style for the invalid email input */
+.transparent-input:invalid {
+    border-color: red;  /* Red border color for invalid email */
+    background-color: #fdd;  /* Light red background */
+}
+
+.transparent-input:invalid:focus {
+    outline: none;  /* Remove the default outline on focus */
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);  /* Subtle red glow when focused on invalid input */
+}
+
+/* Style for the valid email input */
+.transparent-input:valid {
+    border-color: green;  /* Green border color for valid email */
+    background-color: #dff0d8;  /* Light green background */
+}
+
+.transparent-input::placeholder {
+    color: #aaa;  /* Lighter color for the placeholder text */
+}
+
+
+/* Link Styling */
+p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+p a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    form {
+        padding: 20px;
+        width: 90%;
+    }
+}

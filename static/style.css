@@ -1,0 +1,233 @@
+/* Universal Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body and Background */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #c288ff, #3a82ff); /* Matching gradient */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Main Content */
+.main-content {
+    background-color: white;
+    margin: 5%;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1000px; /* Ensures that the content doesn't stretch too wide */
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Welcome message styling */
+.welcome-message {
+    font-size: 24px; /* Set a larger font size for emphasis */
+    font-weight: bold; /* Make the font bold to grab attention */
+    color: #62beff; /* A friendly, professional green color */
+    background-color: #f3fdff; /* Light green background to make it stand out */
+    padding: 20px; /* Add space inside the box */
+    border-radius: 10px; /* Rounded corners for a soft look */
+    text-align: center; /* Center the text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 80%; /* Limit the width of the message */
+    margin: 20px auto; /* Center the message horizontally with some space on top and bottom */
+}
+
+/* Flash Messages Styling */
+.flash-messages {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.flash-messages p {
+    background-color: #f44336; 
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.flash-messages .success {
+    background-color: #4CAF50; 
+}
+
+.flash-messages .info {
+    background-color: #21f33d; 
+}
+
+/* Header Styling */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* Subheading */
+h4 {
+    font-size: 1.2rem;
+    color: #0091ff;
+    margin-bottom: 10px;
+}
+
+/* Button Styles */
+.button {
+    padding: 12px 25px;
+    margin-top: 20px;
+    background-color: #2575fc; /* Blue color */
+    color: white;
+    font-size: 1.1em;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+/* Table Header Styling */
+th {
+    background-color: #2c3e50;
+    color: white;
+    padding: 12px 15px;
+    text-align: center;
+    font-size: 1.1em;
+    border: 1px solid #dddddd;
+}
+
+/* Table Cell Styling */
+td {
+    text-align: center;
+    padding: 12px 15px;
+    border: 1px solid #dddddd;
+}
+
+/* Hover Effect for Table Rows */
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Styling for Edit/Delete Links */
+td a {
+    padding: 8px 12px;
+    color: white;
+    background-color: #22d14b; /* Green for Edit */
+    border-radius: 4px;
+    text-decoration: none;
+    margin: 0 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+td a:hover {
+    background-color: #146125; /* Darker Green on hover */
+    transform: scale(1.1);
+}
+
+td a.delete-btn {
+    background-color: #f83549; /* Red for Delete */
+}
+
+td a.delete-btn:hover {
+    background-color: #d62839; /* Darker Red on hover */
+}
+
+.logout-button {
+    margin-top: 20px;
+    text-align: center;
+    width: 50%;
+}
+
+.logout-button .button {
+    width: 30%;  /* Ensures the button has a fixed width */
+    padding: 10px 20px;  /* Adds some padding inside the button */
+    color: #fff;  /* White text color */
+    background-color: #c90014;  /* Red background color */
+    border: none;  /* Remove border */
+    border-radius: 5px;  /* Optional: rounded corners */
+    font-size: 16px;  /* Font size */
+    cursor: pointer;  /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.2s;  /* Smooth transitions for color and scaling */
+}
+
+/* Hover effect */
+.logout-button .button:hover {
+    background-color: #bf2d1d;  /* Darker red on hover */
+    transform: scale(1.05);  /* Slight scale-up effect on hover */
+}
+
+/* Focus effect (when clicked or focused on) */
+.logout-button .button:focus {
+    outline: none;  /* Remove the default focus outline */
+    box-shadow: 0 0 5px rgb(255, 57, 77);  /* Subtle red glow */
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .main-content {
+        padding: 15px;
+    }
+
+    .button {
+        padding: 8px 16px;
+    }
+
+    .alert {
+        font-size: 0.9rem;
+    }
+
+    table th, table td {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    table th, table td {
+        font-size: 0.8rem;
+        padding: 6px;
+    }
+
+    .button {
+        padding: 8px 14px;
+    }
+
+    .main-content {
+        padding: 10px;
+        width: 50%;
+        box-sizing: border-box;
+    }
+}

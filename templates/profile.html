@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+</head>
+<body>
+
+    <h1>Welcome to Your Profile, {{ current_user.username }}!</h1>
+    
+    <!-- Flash messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-messages">
+                {% for category, message in messages %}
+                    <p class="{{ category }}">{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+    
+    <div class="profile-container">
+        <h3>Your Details</h3>
+        <form action="{{ url_for('update_profile') }}" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" value="{{ current_user.username }}" readonly>
+            
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" value="{{ current_user.email }}" required>
+            
+            <label for="city">City:</label>
+            <input type="text" name="city" id="city" value="{{ current_user.city }}" required>
+            
+            <label for="age">Age:</label>
+            <input type="number" name="age" id="age" value="{{ current_user.age }}" required>
+            
+            <div class="submit-btn">
+                <input type="submit" value="Update Profile">
+            </div>
+        </form>
+
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

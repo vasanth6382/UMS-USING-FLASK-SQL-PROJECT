@@ -1,0 +1,98 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #c288ff, #3a82ff); /* Matching gradient */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    color: #4CAF50;
+}
+
+.profile-container {
+    width: 50%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+    text-align: center;
+    color: #4CAF50;
+}
+
+label {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 8px;
+    color: #666;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid #8b000e;  
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.submit-btn {
+    text-align: center;
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.flash-messages p {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+.flash-messages p.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.flash-messages p.danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}

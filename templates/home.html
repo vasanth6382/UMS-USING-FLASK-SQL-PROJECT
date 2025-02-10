@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<title> USER MANAGEMENT SYSTEM </title>
+		<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+	</head>
+	<body>
+		
+			<h1>User Management System Using Python Flask & MySQL</h1>
+			
+		<div class="main-content">
+			<p class="welcome-message" > Welcome to Your Dashboard {{ current_user.username }}!</p>
+			<h4>
+				{% with messages = get_flashed_messages(with_categories=true) %}
+					{% if messages %}
+						{% for category, message in messages %}
+						<div class="flash-messages">
+							{% for category, message in messages %}
+								<p class="{{ category }}">{{ message }}</p>
+							{% endfor %}
+						</div>
+						{% endfor %}
+					{% endif %}
+				{% endwith %}
+			</h4>
+		{% if current_user.is_authenticated %}
+    {% else %}
+        <p><a href="{{ url_for('login') }}" class="button">Login</a></p>
+    {% endif %}
+	{% if current_user.is_authenticated %}
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>NAME</th>
+				<th>AGE</th>
+				<th>CITY</th>
+				<th>EMAIL_ID</th>
+				<th>EDIT</th>
+				<th>DELETE</th>
+				
+				{% for user in users %}
+				
+				<tr>
+					<td>{{ user.ID }}</td>
+					<td>{{ user.NAME }}</td>
+					<td>{{ user.AGE }}</td>
+					<td>{{ user.CITY }}</td>
+					<td>{{ user.email }}</td>
+
+                    <td><a href="{{ url_for('editUser', id=user.ID) }}" class="edit-btn">Edit</a></td>
+                    <td><a onclick="return confirm('Are you sure to delete?');" href="{{ url_for('deleteUser', id=user.ID) }}" class="delete-btn">Delete</a></td>
+             
+				</tr>
+			{% endfor %}
+		</table>
+		<p><a href="{{ url_for('addUsers') }}" class="button">Add Users</a></p>
+		<a href="{{ url_for('download_csv') }}" class="button">Download Database</a>
+		{% endif %}
+		
+
+	</div>
+	{% if current_user.is_authenticated %}
+        <div class="logout-button">
+            <a href="{{ url_for('logout') }}" class="button">Logout</a>
+        </div>
+    {% endif %}
+	</body>
+</html>

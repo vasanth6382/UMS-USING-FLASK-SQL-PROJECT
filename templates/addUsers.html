@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USER MANAGEMENT SYSTEM</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Add New User Details</h1>
+
+        <!-- Flash messages display -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <!-- User Form -->
+        <form action="" method="post">
+            <label for="id">ID:</label>
+            <input type="text" name="id" required>
+
+            <label for="name">Name:</label>
+            <input type="text" name="name" required>
+
+            <label for="age">Age:</label>
+            <input type="text" name="age" required>
+
+            <label for="city">City:</label>
+            <input type="text" name="city" required>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="Enter your email" required class="transparent-input" required>
+
+            <div class="submit-btn">
+                <input type="submit" value="Save Details">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
